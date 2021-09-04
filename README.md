@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby Version : 2.6.6
+Rails Version : 5.2
 
-Things you may want to cover:
+Used 'Faker' gem for product list
+Used 'Kaminari' gem for pagination
 
-* Ruby version
+git repositary link
+git@github.com:LaxmideviMokhi/shopping_cart.git
 
-* System dependencies
+Hosted in heroku
+https://lrm-shopping-cart.herokuapp.com/
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+API endpoints
+https://lrm-shopping-cart.herokuapp.com/api/v1/products
+https://lrm-shopping-cart.herokuapp.com/api/v1/carts/2
