@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>your order details as follow </p>
+    <p>
+    Order details<br>
+    --------------------------
+    </p>
+    <% @current_cart.line_items.each do |line_item| %>
+    <tr>    
+        <td><%= line_item.product.name %></td>
+        <td><%= number_to_currency(line_item.product.price) %></td>
+        <td><%= line_item.quantity %></td>
+        <td><%= number_to_currency(line_item.total_price) %></td>
+      </tr>
+    <% end %>
+
+    <p>Email: <%= @order.email %></p>
+    ----------
+    </p>
+  </body>
+</html>
