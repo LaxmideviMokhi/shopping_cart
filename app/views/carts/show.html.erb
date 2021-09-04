@@ -1,0 +1,32 @@
+<h2>Cart show</h2>
+<table>
+	<tr>
+		<th>Product Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Total Price</th>
+		<th>Add</th>
+		<th>Remove</th>
+		<th>Remove Item</th>
+	</tr>
+  	<% @cart.line_items.each do |line_item| %>
+		<tr>    
+    		<td><%= line_item.product.name %></td>
+    		<td><%= number_to_currency(line_item.product.price) %></td>
+    		<td><%= line_item.quantity %></td>
+    		<td><%= number_to_currency(line_item.total_price) %></td>
+        	<td><%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %></td>
+        	<td><%= link_to "Reduce one", line_item_reduce_path(:id => line_item), method: :post %></td>
+        	<td><%= link_to "Remove item", line_item_path(line_item), method: :delete %></td>
+    	</tr>
+    <% end %>
+    <tr>
+    	<td></td>
+    	<td></td>
+    	<td colspan="3"><h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3></td></tr>
+</table>
+
+<%= link_to "Proceed to checkout", new_order_path %><br>
+<%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+<br>
+<%= link_to "Add Another Item", root_path %>
