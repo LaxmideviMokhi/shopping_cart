@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
     #current_cart = @current_cart
     respond_to do |format|
       if @order.save
-        OrderMailer.with(order: @order,current_cart: @current_cart).new_order_email.deliver_now
+        OrderMailer.with(order: @order,current_cart: @current_cart).new_order_email.deliver_later
         @cart = @current_cart
         @cart.destroy
         format.html { redirect_to @order, notice: "Order was successfully created." }
