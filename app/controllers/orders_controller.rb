@@ -25,7 +25,10 @@ class OrdersController < ApplicationController
     #current_cart = @current_cart
     respond_to do |format|
       if @order.save
-        OrderMailer.with(order: @order,current_cart: @current_cart).new_order_email.deliver_later
+        OrderMailer.with(order: @order,current_cart: @current_cart).new_order_email.deliver_now
+        @cart = @current_cart
+        @cart.destroy
+        session[:cart_id] = nil
         format.html { redirect_to @order, notice: "Order was successfully created." }
         format.json { render :show, status: :created, location: @order }
       else
