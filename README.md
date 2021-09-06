@@ -5,6 +5,7 @@ Rails Version : 5.2
 
 Used 'Faker' gem for product list
 Used 'Kaminari' gem for pagination
+used 'Figaro' gem for ENV varibles
 
 git repositary link
 git@github.com:LaxmideviMokhi/shopping_cart.git
