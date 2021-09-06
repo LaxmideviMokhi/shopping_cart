@@ -72,10 +72,10 @@ config.action_mailer.default_url_options = { host: host }
 config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :user_name            => ENV["email_id"],
-  :password             => ENV["password"],
-  :authentication       => "plain"
-  #:enable_starttls_auto => true
+  :user_name            => "laxmidevi.1216@gmail.com",
+  :password             => "laxmidevi@89",
+  :authentication       => "plain",
+  :enable_starttls_auto => true
 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
