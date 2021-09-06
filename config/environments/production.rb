@@ -74,8 +74,8 @@ config.action_mailer.smtp_settings = {
   :port                 => 587,
   :user_name            => ENV["email_id"],
   :password             => ENV["password"],
-  :authentication       => "plain",
-  :enable_starttls_auto => true
+  :authentication       => "plain"
+  #:enable_starttls_auto => true
 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
